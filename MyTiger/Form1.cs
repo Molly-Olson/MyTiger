@@ -61,7 +61,7 @@ namespace MyTiger
                 tiger.Save();
             }
 
-            this.FormClosing += (s, e) => tiger.Save();
+            this.FormClosing += (s, e) => tiger?.Save();
 
             btnFeed.Click += btnFeed_Click;
             btnPlay.Click += btnPlay_Click;
@@ -97,6 +97,7 @@ namespace MyTiger
 
         private void UpdateUI()
         {
+            lblName.Text = $"Your awesome pet tiger: {tiger.Name} ... so glorious and regal! Am I right?";
             lblHunger.Text = $"Hunger: {tiger.Hunger}";
             lblHappiness.Text = $"Happiness: {tiger.Happiness}";
             lblEnergy.Text = $"Energy: {tiger.Energy}";
@@ -250,8 +251,8 @@ namespace MyTiger
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show(
-                $"Are you sure you want to release {tiger.Name}? This cannot be undone.",
-                "Release Pet",
+                $"Are you sure you want to let your little baby {tiger.Name} out all on their own?",
+                $"Well so long little buddy, {tiger.Name}",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
@@ -266,7 +267,8 @@ namespace MyTiger
             if (Directory.Exists(savePath))
                 Directory.Delete(savePath, true);
 
-            MessageBox.Show($"{tiger.Name} has been released into the wild. Goodbye!", "Released");
+            MessageBox.Show($"{tiger.Name} has been released into the wild, you have commitment issues don't you?");
+            tiger = null;
             Application.Restart();
         }
 

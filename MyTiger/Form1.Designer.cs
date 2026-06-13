@@ -39,6 +39,7 @@
             btnDelete = new Button();
             btnParty = new Button();
             lblStage = new Label();
+            lblName = new Label();
             ((System.ComponentModel.ISupportInitialize)petImage).BeginInit();
             SuspendLayout();
             // 
@@ -100,38 +101,38 @@
             Sleep.TabIndex = 6;
             Sleep.Text = "Sleep";
             Sleep.UseVisualStyleBackColor = true;
-            //
+            // 
             // btnHighFive
-            //
+            // 
             btnHighFive.Location = new Point(684, 200);
             btnHighFive.Name = "btnHighFive";
             btnHighFive.Size = new Size(94, 29);
             btnHighFive.TabIndex = 8;
             btnHighFive.Text = "High Five!";
             btnHighFive.UseVisualStyleBackColor = true;
-            //
+            // 
             // btnDelete
-            //
+            // 
+            btnDelete.BackColor = Color.IndianRed;
+            btnDelete.ForeColor = Color.White;
             btnDelete.Location = new Point(684, 310);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 9;
             btnDelete.Text = "Release Pet";
-            btnDelete.BackColor = Color.IndianRed;
-            btnDelete.ForeColor = Color.White;
             btnDelete.UseVisualStyleBackColor = false;
-            //
+            // 
             // btnParty
-            //
+            // 
             btnParty.Location = new Point(684, 355);
             btnParty.Name = "btnParty";
             btnParty.Size = new Size(94, 29);
             btnParty.TabIndex = 10;
             btnParty.Text = "Pet Party!";
             btnParty.UseVisualStyleBackColor = true;
-            //
+            // 
             // lblStage
-            //
+            // 
             lblStage.Location = new Point(602, 255);
             lblStage.Name = "lblStage";
             lblStage.Size = new Size(180, 20);
@@ -139,12 +140,22 @@
             lblStage.Text = "Age Stage:";
             lblStage.TextAlign = ContentAlignment.TopCenter;
             lblStage.Click += lblStage_Click;
-            //
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Location = new Point(12, 436);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(50, 20);
+            lblName.TabIndex = 11;
+            lblName.Text = "label1";
+            // 
             // Form1
-            //
+            // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 512);
+            Controls.Add(lblName);
             Controls.Add(lblStage);
             Controls.Add(btnHighFive);
             Controls.Add(btnDelete);
@@ -160,6 +171,7 @@
             Text = "My Pet Tiger";
             ((System.ComponentModel.ISupportInitialize)petImage).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -175,5 +187,6 @@
         private Button btnDelete;
         private Button btnParty;
         private Label lblStage;
+        private Label lblName;
     }
 }
